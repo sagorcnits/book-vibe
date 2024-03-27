@@ -8,7 +8,7 @@ const useBooksdata = () => {
 
     useEffect(()=>{
         setLoading(true)
-        fetch("./books.json")
+        fetch("../../public/books.json")
         .then(res => res.json())
         .then(data => setBooks(data.bookStore))
         setLoading(false)

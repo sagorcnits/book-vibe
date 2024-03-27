@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 import Button from "../../components/button/Button";
-
+import './navbar.css';
 const Navbar = () => {
   return (
-    <div className="navbar my-6 ">
+    <div className="navbar  my-6 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,15 +49,21 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal gap-6 px-1 *:text-[17px] ">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Listed Books</a>
-          </li>
-          <li>
-            <a>Pages to Read</a>
-          </li>
+          <NavLink to="/">
+            <li >
+              <a>Home</a>
+            </li>
+          </NavLink>
+          <NavLink to="/listed_Books">
+            <li>
+              <a>Listed Books</a>
+            </li>
+          </NavLink>
+          <NavLink to="/pages_Read">
+            <li>
+              <a>Pages to Read</a>
+            </li>
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-4">
