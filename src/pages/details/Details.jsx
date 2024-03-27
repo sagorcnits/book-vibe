@@ -16,8 +16,6 @@ const Details = () => {
       <div className="bg-[rgba(19,19,19,0.05)] w-full rounded-xl py-10 flex-1  flex items-center">
         <img className="w-1/2 mx-auto" src={findBook.image} alt="images" />
       </div>
-
-      
       <div className="flex-1">
         <h1 className="text-[#131313] font-bold text-[30px]">
           {findBook.bookName}

@@ -1,37 +1,43 @@
-import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ReadBooks from "../../components/readBooks/ReadBooks";
+import Sort from "../../components/sort/Sort";
 import WishList from "../../components/wishList/WishList";
+import { getStoreLocal, getWishLocal } from "../../utils/localStorage";
+
 const Listed = () => {
+  const [sortToggle, setSortToggle] = useState(true);
+  const [readBooks, setReadBooks] = useState([]);
+ 
+
+  const handleSort = () => {
+    setSortToggle(!sortToggle);
+  };
+
+  const sorted = (event) => {
+    setSortToggle(!sortToggle);
+    const storeData = getStoreLocal();
+    const wishBooksData = getWishLocal();
+    if (event === "Rating") {
+      const ratingSort = storeData.sort((a, b) => b.rating - a.rating);
+      setReadBooks(ratingSort);
+      console.log(wishBooksData)
+    }
+  };
+
   return (
     <div className="my-10">
       <h1 className=" bg-[rgba(19,19,19,0.05)] text-center py-10 rounded-lg  text-4xl font-bold">
         Books
       </h1>
-    <div className="text-center">
-      <details className="dropdown my-10 ">
-      <summary className="cursor-pointer w-40 flex justify-between items-center gap-2 px-7 py-3  text-white font-bold rounded-lg bg-[#23BE0A]">
-        Sort By <IoIosArrowDown className="text-xl"></IoIosArrowDown>
-      </summary>
-        <ul className="p-2 mt-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-40 font-semibold">
-          <li>
-            <a>Sort BY</a>
-          </li>
-          <li>
-            <a>Rating</a>
-          </li>
-          <li>
-            <a>Number of Page</a>
-          </li>
-          <li>
-            <a>Published Year</a>
-          </li>
-        </ul>
-      </details>
-    </div>
-   
-
+      <div className="text-center">
+        <Sort
+          handleSort={handleSort}
+          sortToggle={sortToggle}
+          sorted={sorted}
+        ></Sort>
+      </div>
       <div className="my-6">
         <Tabs>
           <TabList>
@@ -40,11 +46,11 @@ const Listed = () => {
           </TabList>
 
           <TabPanel>
-            <ReadBooks></ReadBooks>
+            <ReadBooks readBooks={readBooks}></ReadBooks>
           </TabPanel>
 
           <TabPanel>
-            <WishList></WishList>
+            <WishList ></WishList>
           </TabPanel>
         </Tabs>
       </div>

@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const ListCard = ({ book }) => {
   const {
+    bookId,
     bookName,
     author,
     image,
@@ -26,13 +29,18 @@ const ListCard = ({ book }) => {
 
           {tags.map((tag, id) => {
             return (
-              <span key={id} className="text-[#23BE0A] font-bold bg-[#23BE0A0D] px-6 py-2 rounded-full">
+              <span
+                key={id}
+                className="text-[#23BE0A] font-bold bg-[#23BE0A0D] px-6 py-2 rounded-full"
+              >
                 #{tag}
               </span>
             );
           })}
 
-          <span className="font-bold">Year of Publishing: {yearOfPublishing}</span>
+          <span className="font-bold">
+            Year of Publishing: {yearOfPublishing}
+          </span>
         </div>
         <div className="py-4 border-b flex gap-10 *:text-[rgba(19,19,19,0.70)] *:font-semibold">
           <span>Publisher: {publisher}</span>
@@ -45,9 +53,11 @@ const ListCard = ({ book }) => {
           <button className="text-[#FFAC33] font-bold bg-[#FFAC3326] px-6 py-2 rounded-full">
             Rating: {rating}
           </button>
-          <button className="text-white font-bold bg-[#23BE0A] px-6 py-2 rounded-full hover:bg-black duration-500">
-            View Details
-          </button>
+          <Link to={`/details/${bookId}`}>
+            <button className="text-white font-bold bg-[#23BE0A] px-6 py-2 rounded-full hover:bg-black duration-500">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

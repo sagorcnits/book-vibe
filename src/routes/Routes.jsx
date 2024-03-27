@@ -8,6 +8,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<h1>Not Found</h1>,
     children: [
       {
         path: "/",
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
-        loader: () => fetch("../books.json"),
+        loader: () => fetch("/books.json"),
       },
 
       {
@@ -27,7 +28,10 @@ const router = createBrowserRouter([
       {
         path:'/pages_Read',
         element:<h1>Page Read</h1>
-      }
+      },
+    
+
+    
     ],
   },
 ]);
