@@ -7,10 +7,10 @@ const ReadBooks = ({ readBooks }) => {
   return (
     <div>
       {readBooks.length <= 0
-        ? storeData.map((book, id) => (
-            <ListCard key={id} book={book}></ListCard>
-          ))
-        : readBooks.map((book, id) => <ListCard key={id} book={book}></ListCard>)}
+        ? storeData.map((book, id) => <ListCard key={id} book={book}></ListCard>)
+        : readBooks.map((book, id) => <ListCard key={id} book={book}></ListCard>)
+        
+      }
     </div>
   );
 };

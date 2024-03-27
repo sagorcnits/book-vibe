@@ -20,10 +20,10 @@ const Sort = ({handleSort,sortToggle,sorted}) => {
             <li onClick={() => sorted("Rating")}>
               <a>Rating</a>
             </li>
-            <li onClick={sorted}>
+            <li onClick={() => sorted("Number of Page")}>
               <a>Number of Page</a>
             </li>
-            <li onClick={sorted}>
+            <li onClick={() => sorted("Published Year")}>
               <a>Published Year</a>
             </li>
           </ul>

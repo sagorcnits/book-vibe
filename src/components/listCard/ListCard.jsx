@@ -15,8 +15,8 @@ const ListCard = ({ book }) => {
   } = book;
 
   return (
-    <div className="flex gap-5 border p-4 rounded-lg mt-4">
-      <div className="w-[25%]  bg-[rgba(19,19,19,0.05)] py-10 rounded-2xl flex justify-center items-center">
+    <div className="flex flex-col md:flex-row gap-5 border p-4 rounded-lg mt-4">
+      <div className="md:w-[25%]  bg-[rgba(19,19,19,0.05)] py-10 rounded-2xl flex justify-center items-center">
         <img src={image} alt="" />
       </div>
       <div>
@@ -24,14 +24,14 @@ const ListCard = ({ book }) => {
         <p className="text-[rgba(19,19,19,0.70)] font-semibold py-4">
           By : {author}
         </p>
-        <div>
+        <div className="flex items-center gap-2">
           <span className="font-bold">tag</span>
 
           {tags.map((tag, id) => {
             return (
               <span
                 key={id}
-                className="text-[#23BE0A] font-bold bg-[#23BE0A0D] px-6 py-2 rounded-full"
+                className="text-[#23BE0A] font-bold md:bg-[#23BE0A0D] md:px-6 md:py-2 rounded-full"
               >
                 #{tag}
               </span>
@@ -46,15 +46,15 @@ const ListCard = ({ book }) => {
           <span>Publisher: {publisher}</span>
           <span>Page {totalPages}</span>
         </div>
-        <div className="flex gap-5 py-6">
+        <div className="flex flex-col md:flex-row gap-5 py-6">
           <button className="text-[#328EFF] font-bold bg-[#328EFF26] px-6 py-2 rounded-full">
             Category: {category}
           </button>
           <button className="text-[#FFAC33] font-bold bg-[#FFAC3326] px-6 py-2 rounded-full">
             Rating: {rating}
           </button>
-          <Link to={`/details/${bookId}`}>
-            <button className="text-white font-bold bg-[#23BE0A] px-6 py-2 rounded-full hover:bg-black duration-500">
+          <Link to={`/details/${bookId}`} >
+            <button className="text-white font-bold bg-[#23BE0A] w-full px-6 py-2 rounded-full hover:bg-black duration-500">
               View Details
             </button>
           </Link>

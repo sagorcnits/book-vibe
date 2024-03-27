@@ -11,7 +11,7 @@ const Details = () => {
 
 
   return (
-    <div className="flex gap-16 my-20">
+    <div className="flex flex-col md:flex-row my-6 gap-4 md:gap-16  md:my-20">
       <ToastContainer></ToastContainer>
       <div className="bg-[rgba(19,19,19,0.05)] w-full rounded-xl py-10 flex-1  flex items-center">
         <img className="w-1/2 mx-auto" src={findBook.image} alt="images" />
@@ -35,7 +35,7 @@ const Details = () => {
             );
           })}
         </div>
-        <div className="w-[60%] py-5">
+        <div className="w-[70%] py-5">
           <ul className="*:flex *:gap-5 *:items-center *:justify-between *:mt-3  ">
             <li className="font-bold">
               <span className="text-[rgba(19,19,19,0.70)]">

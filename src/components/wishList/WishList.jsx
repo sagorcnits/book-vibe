@@ -1,14 +1,20 @@
 import { getWishLocal } from "../../utils/localStorage";
 import ListCard from "../listCard/ListCard";
 
-const WishList = () => {
+const WishList = ({wishBooks}) => {
 
     const storeData = getWishLocal();
 
 
   return (
     <div>
-        {storeData.map((book,id) => <ListCard key={id} book={book}></ListCard>)}
+
+      {
+        wishBooks.length <=0
+         ? storeData.map((book,id) => <ListCard key={id} book={book}></ListCard>)
+        : wishBooks.map((book,id) => <ListCard key={id} book={book}></ListCard>)
+      }
+       
     </div>
   );
 };

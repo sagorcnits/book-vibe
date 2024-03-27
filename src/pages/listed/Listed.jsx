@@ -5,10 +5,12 @@ import ReadBooks from "../../components/readBooks/ReadBooks";
 import Sort from "../../components/sort/Sort";
 import WishList from "../../components/wishList/WishList";
 import { getStoreLocal, getWishLocal } from "../../utils/localStorage";
+import './listed.css';
 
 const Listed = () => {
   const [sortToggle, setSortToggle] = useState(true);
   const [readBooks, setReadBooks] = useState([]);
+  const [wishBooks,setWishBooks] = useState([])
  
 
   const handleSort = () => {
@@ -20,9 +22,20 @@ const Listed = () => {
     const storeData = getStoreLocal();
     const wishBooksData = getWishLocal();
     if (event === "Rating") {
-      const ratingSort = storeData.sort((a, b) => b.rating - a.rating);
-      setReadBooks(ratingSort);
-      console.log(wishBooksData)
+      const readRatingSort = storeData.sort((a, b) => b.rating - a.rating);
+      setReadBooks(readRatingSort);
+      const WishRatingSort = wishBooksData.sort((a, b) => b.rating - a.rating);
+      setWishBooks(WishRatingSort);
+    } else if (event === "Number of Page"){
+      const readPageSort = storeData.sort((a, b) => b.totalPages - a.totalPages);
+      setReadBooks(readPageSort);
+      const WishPageSort = wishBooksData.sort((a, b) => b.totalPages - a.totalPages);
+      setWishBooks(WishPageSort);
+    } else {
+      const readPubishSort = storeData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+      setReadBooks(readPubishSort);
+      const WishPublishSort = wishBooksData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+      setWishBooks(WishPublishSort);
     }
   };
 
@@ -41,7 +54,7 @@ const Listed = () => {
       <div className="my-6">
         <Tabs>
           <TabList>
-            <Tab>Read Books</Tab>
+            <Tab >Read Books</Tab>
             <Tab>Wishlist Books</Tab>
           </TabList>
 
@@ -50,7 +63,7 @@ const Listed = () => {
           </TabPanel>
 
           <TabPanel>
-            <WishList ></WishList>
+            <WishList wishBooks={wishBooks}></WishList>
           </TabPanel>
         </Tabs>
       </div>

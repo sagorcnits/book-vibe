@@ -4,9 +4,9 @@ import Button from "../button/Button";
 
 const Banner = () => {
   return (
-    <div className="flex gap-4 items-center bg-[rgba(19,19,19,0.05)] py-10  rounded-xl">
-      <div className="flex-1  pl-20">
-        <h1 className="text-[50px] font-bold text-[#131313] pb-8">
+    <div className="flex flex-col-reverse md:flex-row gap-4 items-center bg-[rgba(19,19,19,0.05)] py-10  rounded-xl px-4 md:px-0">
+      <div className="flex-1  md:pl-20">
+        <h1 className="md:text-[50px] text-[30px] font-bold text-[#131313] pb-8">
           Books to freshen up your bookshelf
         </h1>
         <NavLink to='/listed_Books'>
@@ -14,7 +14,7 @@ const Banner = () => {
         </NavLink>
       </div>
       <div className="flex-1">
-        <img className="block mx-auto" src={BannerImg} alt="banner" />
+        <img className="block mx-auto w-1/2 md:w-full" src={BannerImg} alt="banner" />
       </div>
     </div>
   );

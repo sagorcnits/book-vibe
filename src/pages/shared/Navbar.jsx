@@ -3,8 +3,8 @@ import Button from "../../components/button/Button";
 import './navbar.css';
 const Navbar = () => {
   return (
-    <div className="navbar  my-6 ">
-      <div className="navbar-start">
+    <div className="navbar justify-between my-6 ">
+      <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -26,29 +26,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <a className="font-bold text-3xl">Book Vibe</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal gap-6 px-1 *:text-[17px] ">
+          
           <NavLink to="/">
             <li >
               <a>Home</a>
@@ -64,12 +42,55 @@ const Navbar = () => {
               <a>Pages to Read</a>
             </li>
           </NavLink>
+          <NavLink to="/blog">
+            <li>
+              <a>Blog</a>
+            </li>
+          </NavLink>
+          <NavLink to="/contact">
+            <li>
+              <a>Contact</a>
+            </li>
+          </NavLink>
+           
+          </ul>
+        </div>
+        <a className="font-bold hidden md:flex text-3xl">Book Vibe</a>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal gap-2 px-1 *:text-[17px] ">
+          <NavLink to="/">
+            <li >
+              <a>Home</a>
+            </li>
+          </NavLink>
+          <NavLink to="/listed_Books">
+            <li>
+              <a>Listed Books</a>
+            </li>
+          </NavLink>
+          <NavLink to="/pages_Read">
+            <li>
+              <a>Pages to Read</a>
+            </li>
+          </NavLink>
+          <NavLink to="/blog">
+            <li>
+              <a>Blog</a>
+            </li>
+          </NavLink>
+          <NavLink to="/contact">
+            <li>
+              <a>Contact</a>
+            </li>
+          </NavLink>
         </ul>
       </div>
-      <div className="navbar-end flex gap-4">
+      <div className="navbar-end hidden md:flex gap-4">
         <Button title={"Sign In"} bgColor={"#23BE0A"}></Button>
         <Button title={"Sign Up"} bgColor={"#59C6D2"}></Button>
       </div>
+      <a className="font-bold md:hidden text-2xl">Book Vibe</a>
     </div>
   );
 };

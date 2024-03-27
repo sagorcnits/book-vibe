@@ -1,14 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/root/Root";
+import Blog from "../pages/blogs/Blog";
+import Contact from "../pages/contact/Contact";
 import Details from "../pages/details/Details";
 import Home from "../pages/home/Home";
 import Listed from "../pages/listed/Listed";
+import PageRead from "../pages/pageRead/PageRead";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<h1>Not Found</h1>,
+    errorElement: <h1>Not Found</h1>,
     children: [
       {
         path: "/",
@@ -26,12 +29,18 @@ const router = createBrowserRouter([
         element: <Listed></Listed>,
       },
       {
-        path:'/pages_Read',
-        element:<h1>Page Read</h1>
+        path: "/pages_Read",
+        element: <PageRead></PageRead>,
       },
-    
 
-    
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
     ],
   },
 ]);
