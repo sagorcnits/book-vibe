@@ -8,14 +8,16 @@ const Details = () => {
   const booksData = useLoaderData();
  const findBook  =  booksData.bookStore.find(book => book.bookId === bookId.id);
 
-//  console.log(findBook.image)
+
 
   return (
-    <div className="flex gap-10 my-20">
+    <div className="flex gap-16 my-20">
       <ToastContainer></ToastContainer>
-      <div className="bg-[rgba(19,19,19,0.05)] w-full flex-1  flex items-center">
-        <img className="w-1/2 mx-auto" src='./cold case.png'  alt="images" />
+      <div className="bg-[rgba(19,19,19,0.05)] w-full rounded-xl py-10 flex-1  flex items-center">
+        <img className="w-1/2 mx-auto" src={findBook.image} alt="images" />
       </div>
+
+      
       <div className="flex-1">
         <h1 className="text-[#131313] font-bold text-[30px]">
           {findBook.bookName}
