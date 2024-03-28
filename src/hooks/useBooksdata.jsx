@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 
-const useBooksdata = () => {
+const useBooksdata = (element) => {
 
     const [books,setBooks] = useState([]);
     const [loading,setLoading] = useState(true)
 
     useEffect(()=>{
         setLoading(true)
-        fetch("/books.json")
+        fetch(element)
         .then(res => res.json())
         .then(data => setBooks(data.bookStore))
         setLoading(false)

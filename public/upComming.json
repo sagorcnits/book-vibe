@@ -1,0 +1,43 @@
+{
+  "bookStore": [
+    {
+      "bookId": "001",
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://img.freepik.com/free-psd/book-hardcover-mockup_125540-225.jpg?t=st=1710337030~exp=1710340630~hmac=e40106929b96b7f42b17764b7d6b4a034ece844e8b7bda5dd0e54f1bf8d354f4&w=740",
+      "review": "A tale of love, longing, and the American Dream.",
+      "totalPages": 180,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "Romance"],
+      "publisher": "Scribner",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": "002",
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://img.freepik.com/free-psd/book-hardcover-mockup-three-views_125540-226.jpg?t=st=1710337045~exp=1710340645~hmac=1762a6d99becadfd0c62fe426f29c53378f482020243e595b2547900cb76e262&w=740",
+      "review": "A compelling story of teenage angst and rebellion.",
+      "totalPages": 224,
+      "rating": 4.2,
+      "category": "Fiction",
+      "tags": ["Classic", "Literature"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": "003",
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://img.freepik.com/free-photo/open-book-with-fairytale-scene_52683-107846.jpg?t=st=1710336982~exp=1710340582~hmac=a655d9d1e53d45422815e5be4d79e16808a1df465bc0e00d7360cb9fd286ff64&w=740",
+      "review": "A powerful portrayal of racial injustice and moral growth.",
+      "totalPages": 336,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Classic", "Social Justice"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    }
+  ]
+}

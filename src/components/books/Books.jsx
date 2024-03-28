@@ -3,7 +3,7 @@ import useBooksdata from "../../hooks/useBooksdata";
 import BookCard from "../bookCard/BookCard";
 
 const Books = () => {
-  const { books } = useBooksdata();
+  const { books } = useBooksdata("/books.json");
 
   return (
     <div className="grid md:grid-cols-3 gap-5 my-8">

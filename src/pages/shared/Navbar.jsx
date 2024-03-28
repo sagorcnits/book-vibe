@@ -42,9 +42,9 @@ const Navbar = () => {
               <a>Pages to Read</a>
             </li>
           </NavLink>
-          <NavLink to="/blog">
+          <NavLink to="/upcomming">
             <li>
-              <a>Blog</a>
+              <a>Up Comming</a>
             </li>
           </NavLink>
           <NavLink to="/contact">
@@ -74,9 +74,9 @@ const Navbar = () => {
               <a>Pages to Read</a>
             </li>
           </NavLink>
-          <NavLink to="/blog">
+          <NavLink to="/upcomming">
             <li>
-              <a>Blog</a>
+              <a>Up Comming</a>
             </li>
           </NavLink>
           <NavLink to="/contact">
