@@ -5,13 +5,12 @@ import ReadBooks from "../../components/readBooks/ReadBooks";
 import Sort from "../../components/sort/Sort";
 import WishList from "../../components/wishList/WishList";
 import { getStoreLocal, getWishLocal } from "../../utils/localStorage";
-import './listed.css';
 
 const Listed = () => {
   const [sortToggle, setSortToggle] = useState(true);
-  const [readBooks, setReadBooks] = useState([]);
-  const [wishBooks,setWishBooks] = useState([])
- 
+  const [books, setBooks] = useState([]);
+  const [wishBooks, setWishBooks] = useState([]);
+  const [isActive, setIsActive] = useState(true);
 
   const handleSort = () => {
     setSortToggle(!sortToggle);
@@ -19,25 +18,43 @@ const Listed = () => {
 
   const sorted = (event) => {
     setSortToggle(!sortToggle);
-    const storeData = getStoreLocal();
-    const wishBooksData = getWishLocal();
-    if (event === "Rating") {
-      const readRatingSort = storeData.sort((a, b) => b.rating - a.rating);
-      setReadBooks(readRatingSort);
-      const WishRatingSort = wishBooksData.sort((a, b) => b.rating - a.rating);
-      setWishBooks(WishRatingSort);
-    } else if (event === "Number of Page"){
-      const readPageSort = storeData.sort((a, b) => b.totalPages - a.totalPages);
-      setReadBooks(readPageSort);
-      const WishPageSort = wishBooksData.sort((a, b) => b.totalPages - a.totalPages);
-      setWishBooks(WishPageSort);
+
+    if (isActive) {
+      const storeData = getStoreLocal();
+      if (event === "Rating") {
+        const RatingSort = storeData.sort((a, b) => b.rating - a.rating);
+        setBooks(RatingSort);
+      } else if (event === "Number of Page") {
+        const PageSort = storeData.sort((a, b) => b.totalPages - a.totalPages);
+        setBooks(PageSort);
+      } else {
+        const PubishSort = storeData.sort(
+          (a, b) => b.yearOfPublishing - a.yearOfPublishing
+        );
+        setBooks(PubishSort);
+      }
     } else {
-      const readPubishSort = storeData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
-      setReadBooks(readPubishSort);
-      const WishPublishSort = wishBooksData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
-      setWishBooks(WishPublishSort);
+      const wishBooksData = getWishLocal();
+      if (event === "Rating") {
+        const WishRatingSort = wishBooksData.sort(
+          (a, b) => b.rating - a.rating
+        );
+        setWishBooks(WishRatingSort);
+      } else if (event === "Number of Page") {
+        const WishPageSort = wishBooksData.sort(
+          (a, b) => b.totalPages - a.totalPages
+        );
+        setWishBooks(WishPageSort);
+      } else {
+        const WishPublishSort = wishBooksData.sort(
+          (a, b) => b.yearOfPublishing - a.yearOfPublishing
+        );
+        setWishBooks(WishPublishSort);
+      }
     }
   };
+
+
 
   return (
     <div className="my-10">
@@ -54,12 +71,12 @@ const Listed = () => {
       <div className="my-6">
         <Tabs>
           <TabList>
-            <Tab >Read Books</Tab>
-            <Tab>Wishlist Books</Tab>
+            <Tab onClick={() => setIsActive(true)}>Read Books</Tab>
+            <Tab onClick={() => setIsActive(false)}>Wishlist Books</Tab>
           </TabList>
 
           <TabPanel>
-            <ReadBooks readBooks={readBooks}></ReadBooks>
+            <ReadBooks books={books}></ReadBooks>
           </TabPanel>
 
           <TabPanel>
