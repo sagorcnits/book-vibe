@@ -39,7 +39,7 @@ const PageRead = () => {
 
   return (
     <>
-     { bookData.length > 0 &&
+     { bookData.length > 0 ?
     <div className="md:w-[90%] h-[300px] md:h-[500px] flex justify-center items-center mx-auto bg-[rgba(19,19,19,0.03)] rounded-2xl">
     
     <ResponsiveContainer>
@@ -71,7 +71,7 @@ const PageRead = () => {
           </Bar>
         </BarChart>
         </ResponsiveContainer>
-    </div>
+    </div> : <h1  className=" bg-[rgba(19,19,19,0.05)] text-center py-10 rounded-lg  text-4xl font-bold">No Read Books</h1>
       }
     </>
   );
