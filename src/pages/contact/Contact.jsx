@@ -1,6 +1,11 @@
 
 
 const Contact = () => {
+
+const handleSubmit = (e) => {
+e.preventDefault();
+}
+
   return (
     <div className='flex flex-col md:flex-row gap-5 items-center md:w-[80%] mx-auto my-10'>
         <div className='flex-1'>
@@ -24,7 +29,7 @@ const Contact = () => {
             Address
           <input type="text" className="grow" placeholder="address" />
         </label>
-        <button className=' mt-4 w-full px-7 py-3 text-white font-bold rounded-lg bg-[#23BE0A]'>Submit</button>
+        <button onClick={(e)=> handleSubmit(e)} className=' mt-4 w-full px-7 py-3 text-white font-bold rounded-lg bg-[#23BE0A] hover:bg-black duration-500'>Submit</button>
       </form>
     </div>
   );

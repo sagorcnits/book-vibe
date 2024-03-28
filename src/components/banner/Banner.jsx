@@ -14,7 +14,7 @@ const Banner = () => {
         </NavLink>
       </div>
       <div className="flex-1">
-        <img className="block mx-auto w-1/2 md:w-full" src={BannerImg} alt="banner" />
+        <img className="block mx-auto w-1/2 md:w-[70%]" src={BannerImg} alt="banner" />
       </div>
     </div>
   );
