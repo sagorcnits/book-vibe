@@ -11,4 +11,4 @@ Bullet Point Feature of the website
 
 Some Feature of the Website
 
-The name of the website is jBook Vibe. This website has some features like home page, listed page, read to book page, upcoming page, contact page etc. The listed page has a great feature. The listed page has two tabs with separate shortcuts for both. If you click on the Sorted by button, there is a separate sorted list.
+The name of the website is Book Vibe. This website has some features like home page, listed page, read to book page, upcoming page, contact page etc. The listed page has a great feature. The listed page has two tabs with separate shortcuts for both. If you click on the Sorted by button, there is a separate sorted list.
